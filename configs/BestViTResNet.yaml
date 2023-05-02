@@ -1,0 +1,71 @@
+# Input/Output/Name
+data: "dataset/data/train.pkl"
+valdata: "dataset/data/val.pkl"
+tokenizer: "dataset/data/tokenizer_small.json"
+output_path: "outputs"
+model_path: "checkpoints"
+load_chkpt: null
+save_freq: 5 # save every nth epoch
+name: "BestViTResNet_16-AJM_5_epoch_test"
+
+# Training parameters
+epochs: 5
+batchsize: 16
+
+# Testing parameters
+testbatchsize: 20
+valbatches: 50
+temperature: 0.2
+
+# Optimizer configurations
+optimizer: "Adam"
+scheduler: "StepLR"
+lr: 0.0005
+gamma: 0.9995
+lr_step: 10
+betas:
+- 0.9
+- 0.999
+
+# Parameters for model architectures
+max_seq_len: 512
+max_height: 192
+max_width: 672
+min_height: 32
+min_width: 32
+channels: 1
+patch_size: 16
+
+# Encoder / Decoder
+dim: 256
+backbone_layers: 
+  - 2
+  - 3
+  - 7
+encoder_depth: 6
+emb_dropout: 0.2
+num_layers: 6
+decoder_args: 
+  cross_attend: true
+  ff_glu: true
+  attn_on_attn: true
+  use_scalenorm: false
+  rel_pos_bias: false
+heads: 8
+num_tokens: 1000
+encoder_structure: hybrid
+encoder_type: resnet
+linear_attn: false
+
+# Other
+seed: 42
+id: null
+sample_freq: 5000
+test_samples: 5
+debug: True
+pad: False
+
+# Token ids
+pad_token: 0
+bos_token: 1
+eos_token: 2

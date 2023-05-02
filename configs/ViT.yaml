@@ -1,0 +1,106 @@
+backbone_layers: [2, 3, 7]
+betas: [0.9, 0.999]
+batchsize: 256
+bos_token: 1
+channels: 1
+data: dataset/data/train.pkl
+debug: true
+decoder_args: 
+  attn_on_attn: true
+  cross_attend: true
+  ff_glu: true
+  rel_pos_bias: false
+  use_scalenorm: false
+linear_attn: true
+dim: 512
+encoder_depth: 6
+eos_token: 2
+epochs: 50
+gamma: 0.9995
+heads: 8
+id: null
+load_chkpt: null
+lr: 0.001
+lr_step: 30
+max_height: 192
+max_seq_len: 512
+max_width: 672
+min_height: 32
+min_width: 32
+model_path: checkpoints
+name: test_linear_attetnion
+num_layers: 4
+num_tokens: 8000
+optimizer: Adam
+output_path: outputs
+pad: false
+pad_token: 0
+patch_size: 16
+sample_freq: 1000
+save_freq: 5
+scheduler: StepLR
+seed: 42
+encoder_structure: hybrid
+encoder_type: resnet
+# encoder_structure: vit
+# encoder_type: vit
+temperature: 0.2
+test_samples: 5
+testbatchsize: 20
+tokenizer: dataset/tokenizer.json
+valbatches: 100
+sample_freq: 1000
+valdata: dataset/data/val.pkl
+# gpu_devices: 0 #[0,1,2,3,4,5,6,7]
+# betas:
+# - 0.99
+# - 0.999
+# batchsize: 64
+# bos_token: 1
+# channels: 1
+# data: dataset/data/train.pkl
+# debug: false
+# decoder_args:
+#   attn_on_attn: true
+#   cross_attend: true
+#   ff_glu: true
+#   rel_pos_bias: false
+#   use_scalenorm: false
+# dim: 256
+# emb_dropout: 0
+# encoder_depth: 4
+# eos_token: 2
+# epochs: 10
+# gamma: 0.9995
+# heads: 8
+# id: null
+# load_chkpt: null
+# lr: 0.001
+# lr_step: 100
+# max_height: 192
+# max_seq_len: 512
+# max_width: 672
+# min_height: 32
+# min_width: 32
+# micro_batchsize: -1
+# model_path: checkpoints_add
+# name: test_linear_attn
+# num_layers: 4
+# num_tokens: 1000
+# optimizer: Adam
+# output_path: outputs
+# pad: false
+# pad_token: 0
+# patch_size: 16
+# sample_freq: 1000
+# save_freq: 5
+# scheduler: StepLR
+# seed: 42
+# encoder_structure: vit
+# encoder_type: vit
+# temperature: 0.2
+# test_samples: 5
+# testbatchsize: 20
+# tokenizer: dataset/tokenizer.json
+# valbatches: 100
+# valdata: dataset/data/val.pkl
